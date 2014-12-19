@@ -4,10 +4,16 @@
 
 ## Installation
 
+Install [rogerwang/node-webkit](https://github.com/rogerwang/node-webkit "rogerwang/node-webkit").
+
 ```
 npm install
 /Applications/node-webkit.app/Contents/MacOS/node-webkit ./
 ```
+
+or
+
+[How to run apps · rogerwang/node-webkit Wiki](https://github.com/rogerwang/node-webkit/wiki/How-to-run-apps "How to run apps · rogerwang/node-webkit Wiki")
 
 ## Usage
 
