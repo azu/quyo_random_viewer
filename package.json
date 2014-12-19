@@ -1,0 +1,22 @@
+{
+  "name": "quyo_random_viewer",
+  "description": "quyoviewer",
+  "version": "1.0.0",
+  "homepage": "https://github.com/azu/quyo_random_viewer/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azu/quyo_random_viewer.git"
+  },
+  "main": "index.html",
+  "directories": {
+    "test": "test/"
+  },
+  "author": "azu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azu/quyo_random_viewer/issues"
+  },
+  "dependencies": {
+    "node-webkit-winstate": "^1.0.2"
+  }
+}

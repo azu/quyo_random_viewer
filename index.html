@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <script src="node-webkit/menu.js"></script>
+    <script src="node_modules/node-webkit-winstate/index.js"></script>
+</head>
+<body>
+<iframe src="http://quyo.hatelabo.jp/items/next" id="js-frame" nwfaketop></iframe>
+<script>
+    var frameViewer = document.getElementById("js-frame");
+    frameViewer.onload = function () {
+        var timerID = setTimeout(function () {
+            clearTimeout(timerID);
+            frameViewer.contentWindow.location.href = "http://quyo.hatelabo.jp/items/next";
+        }, 45 * 1000);
+        frameViewer.contentWindow.addEventListener("click", function () {
+            clearTimeout(timerID);
+            console.log("timerは止めます");
+        }, true);
+    };
+</script>
+</body>
+</html>
