@@ -31,14 +31,18 @@
 <iframe src="http://quyo.hatelabo.jp/items/next" id="js-frame" nwfaketop></iframe>
 <script>
     var frameViewer = document.getElementById("js-frame");
+    var gui = require('nw.gui'); //or global.window.nwDispatcher.requireNwGui() (see https://github.com/rogerwang/node-webkit/issues/707)
+    // Get the current window
+    var win = gui.Window.get();
     frameViewer.onload = function () {
+        win.title = "Quyo: 自動リロード実行中";
         var timerID = setTimeout(function () {
             clearTimeout(timerID);
             frameViewer.contentWindow.location.href = "http://quyo.hatelabo.jp/items/next";
         }, 45 * 1000);
         frameViewer.contentWindow.addEventListener("click", function () {
+            win.title = "Quyo: 自動リロード停止中";
             clearTimeout(timerID);
-            console.log("timerは止めます");
         }, true);
     };
 </script>
